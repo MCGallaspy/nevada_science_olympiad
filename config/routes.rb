@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  
   root 'static_pages#home'
 
   get 'coe' => 'static_pages#code_of_ethics'
 
   get 'events' => 'static_pages#events'
+
+  resources :static_pages do
+    member { post :mercury_update }
+  end
+  
+  mount Mercury::Engine => '/'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
