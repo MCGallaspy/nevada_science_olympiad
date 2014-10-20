@@ -5,10 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
 </head>
 <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+    <div class="row">
+        <nav class="col-md-2 nso-nav-left">
+            <h2>Site pages</h2>
+            <ul class="nav nav-pills nav-stacked">
+                <li><%= link_to "Home", "#" %></li>
+                <li><%= link_to "Events", "#" %></li>
+                <li><%= link_to "Code of Ethics", "#" %></li>
+            </ul>
+        </nav>
 
-<%= yield %>
+
+        <section class="col-md-10">
+            <h2 class="jumbotron"><%= yield(:title) %></h2>
+            <%= yield %>
+        </section>
+    </div>
+    </div>
 
 </body>
 </html>
