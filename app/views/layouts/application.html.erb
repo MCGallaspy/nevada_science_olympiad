@@ -15,9 +15,7 @@
         <nav class="col-md-2 nso-nav-left panel">
             <h3 class="panel-heading">Site pages</h3>
             <ul class="nav nav-pills nav-stacked">
-                <li><%= link_to "Home", "#" %></li>
-                <li><%= link_to "Events", "#" %></li>
-                <li><%= link_to "Code of Ethics", "#" %></li>
+                <%= render :partial => 'layouts/navlink', :collection => @navlinks, :as => :link %>
             </ul>
         </nav>
 

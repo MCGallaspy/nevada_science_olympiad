@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
-  get 'static_pages/code_of_ethics'
+  get 'coe' => 'static_pages#code_of_ethics'
 
-  get 'static_pages/events'
+  get 'events' => 'static_pages#events'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
