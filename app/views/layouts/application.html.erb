@@ -10,10 +10,10 @@
 </head>
 <body>
     <%= render 'layouts/header' %>
-    <div class="container">
+    <div class="container panel">
     <div class="row">
-        <nav class="col-md-2 nso-nav-left">
-            <h2>Site pages</h2>
+        <nav class="col-md-2 nso-nav-left panel">
+            <h3 class="panel-heading">Site pages</h3>
             <ul class="nav nav-pills nav-stacked">
                 <li><%= link_to "Home", "#" %></li>
                 <li><%= link_to "Events", "#" %></li>
@@ -22,9 +22,11 @@
         </nav>
 
 
-        <section class="col-md-10">
-            <h2 class="jumbotron"><%= yield(:title) %></h2>
-            <%= yield %>
+        <section class="col-md-10 panel panel">
+            <h2 class="jumbotron panel-heading"><%= yield(:title) %></h2>
+            <div class="panel-body well">
+                <%= yield %>
+            </div>
         </section>
     </div>
     </div>
