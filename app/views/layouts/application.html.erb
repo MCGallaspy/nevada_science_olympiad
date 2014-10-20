@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NevadaScienceOlympiad</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title><%= yield(:title) %> - Nevada Science Olympiad</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
 </head>
 <body>
+    <%= render 'layouts/header' %>
+    <div class="container panel">
+    <div class="row">
+        <nav class="col-md-2 nso-nav-left panel">
+            <h3 class="panel-heading">Site pages</h3>
+            <ul class="nav nav-pills nav-stacked">
+                <%= render :partial => 'layouts/navlink', :collection => @navlinks, :as => :link %>
+            </ul>
+        </nav>
 
-<%= yield %>
+
+        <section class="col-md-10 panel panel">
+            <h2 class="jumbotron panel-heading"><%= yield(:title) %></h2>
+            <div class="panel-body well">
+                <%= yield %>
+            </div>
+        </section>
+    </div>
+    </div>
 
 </body>
 </html>

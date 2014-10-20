@@ -1,0 +1,28 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+    overflow-y: scroll;
+    background-color: grey;
+}
+
+body {
+    padding-top: 60px;
+    background-color: black;
+}
+
+.row {
+    background-color: white;
+}
+
+section {
+    overflow: auto;
+}
+
+.nso-nav-left {
+}
+
+.nso-banner {
+    background-color: black;
+    padding-bottom: 60px;
+}
