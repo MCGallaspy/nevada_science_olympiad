@@ -3,5 +3,5 @@
 <%= raw @static_page.content %>
 </div>
 <small><%= link_to "Edit page", "/editor" + request.path, id: "edit_link",
-            data: {save_url: mercury_update_static_page_path(@static_page)} %>
+            data: {save_url: mercury_update_static_page_path(@static_page)} if logged_in? %>
 </small>
