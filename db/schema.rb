@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141020235126) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "static_pages", force: true do |t|
     t.text     "content"
     t.datetime "created_at"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20141020235126) do
     t.string   "name"
   end
 
-  add_index "static_pages", ["name"], name: "index_static_pages_on_name", unique: true
+  add_index "static_pages", ["name"], name: "index_static_pages_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -30,6 +33,6 @@ ActiveRecord::Schema.define(version: 20141020235126) do
     t.string   "password_digest"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
