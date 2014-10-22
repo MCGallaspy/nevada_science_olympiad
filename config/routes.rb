@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
   root 'static_pages#home'
 
   get 'coe' => 'static_pages#code_of_ethics'
@@ -10,6 +14,8 @@ Rails.application.routes.draw do
     member { post :mercury_update }
   end
   
+  resources :users
+
   mount Mercury::Engine => '/'
 
   # The priority is based upon order of creation: first created -> highest priority.

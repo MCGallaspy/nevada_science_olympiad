@@ -10,7 +10,7 @@
 </head>
 <body>
     <%= render 'layouts/header' %>
-    <div class="container panel">
+    <div class="container panel" id="content-container">
     <div class="row">
         <nav class="col-md-2 nso-nav-left panel">
             <h3 class="panel-heading">Site pages</h3>
@@ -22,6 +22,9 @@
 
         <section class="col-md-10 panel panel">
             <h2 class="jumbotron panel-heading"><%= yield(:title) %></h2>
+            <% flash.each do |message_type, message| %>
+                <div class="alert alert-<%= message_type %>"><%= message %></div>
+            <% end %>
             <div class="panel-body well">
                 <%= yield %>
             </div>
@@ -29,5 +32,7 @@
     </div>
     </div>
 
+    <%= render 'layouts/footer' %>
 </body>
+
 </html>
