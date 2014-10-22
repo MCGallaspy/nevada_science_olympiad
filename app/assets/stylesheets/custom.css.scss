@@ -58,3 +58,11 @@ input {
 #content-container {
     margin-bottom: 0;
 }
+
+.user-container {
+    border: 1px solid black;
+    margin: 2px;
+    p {
+        margin: 5px;
+    }
+}
