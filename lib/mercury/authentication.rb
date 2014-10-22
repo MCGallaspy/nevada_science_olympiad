@@ -1,6 +1,6 @@
 module Mercury
   module Authentication
-    include SessionsHelper
+    include ::SessionsHelper
     
     def can_edit?
       unless logged_in?
