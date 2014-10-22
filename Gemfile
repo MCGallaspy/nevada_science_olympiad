@@ -4,12 +4,19 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
 gem 'bcrypt', '~> 3.1.5'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: '1cc637b0bccea19085f824d2881c6513ed5ee8ae'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
