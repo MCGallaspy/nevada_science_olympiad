@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :announcements
   before_save {self.email = email.downcase }
   validates :name, presence: true, length: {maximum: 50}
   # This regex ain't perfect, but we've got low standards
