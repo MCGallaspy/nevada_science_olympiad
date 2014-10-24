@@ -1,0 +1,4 @@
+<% provide(:title, "Announcements") %>
+<% @announcements.each do |announcement| %>
+  <%= render 'announcements/announcement', :announcement => announcement %>
+<% end %>
