@@ -39,18 +39,6 @@ class UsersController < ApplicationController
   end
 
   private
-    
-    def logged_in_user
-      unless logged_in?
-        flash[:danger] = "Please log in."
-        redirect_to login_path
-      end
-    end
-  
-    def verify_user
-      @user = User.find(params[:id])
-      redirect_to root_path unless @user == current_user
-    end
 
     def user_params
       params.require(:user).permit(:name, :email, :password,

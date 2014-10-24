@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   
   resources :users
 
-  resources :announcements
+  resources :announcements do
+    member { post :mercury_update }
+  end
 
   mount Mercury::Engine => '/'
 

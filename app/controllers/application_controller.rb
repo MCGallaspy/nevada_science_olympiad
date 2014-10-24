@@ -13,6 +13,19 @@ class ApplicationController < ActionController::Base
       # Programmatically generate our nav links using [Link Name, path] pairs
       @navlinks = [{:name => "Home", :path => root_path},
                    {:name => "Events", :path => events_path},
-                   {:name => "Code of Ethics", :path => coe_path}]
+                   {:name => "Code of Ethics", :path => coe_path},
+                   {:name => "Announcements", :path => announcements_path}]
+    end
+    
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_path
+      end
+    end
+  
+    def verify_user
+      @user = User.find(params[:id])
+      redirect_to root_path unless @user == current_user
     end
 end

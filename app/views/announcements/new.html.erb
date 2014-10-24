@@ -1,0 +1,10 @@
+<% provide(:title, "Create new announcement") %>
+
+<%= form_for(@announcement) do |f| %>
+  <%= render 'shared/errors' %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, rows: 20, class: 'form-control' %>
+
+  <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>

@@ -1,8 +1,15 @@
 <div class="panel panel-primary announcement-container">
   <section class="panel-body announcement-content">
-      <%= raw announcement.content %> 
+    <%= raw announcement.content %> 
     <footer class="panel-footer announcement-footer">
-      <p><%= announcement.created_at %></p>
+      <p><%= announcement.created_at.in_time_zone("Pacific Time (US & Canada)")
+             .strftime("%A, %B %d, %l:%M %p") %></p>
+      <% if logged_in? %>
+        <small><%= link_to "View and edit announcement", announcement %></small>
+        <br/>
+        <small><%= link_to "Delete", announcement, method: :delete,
+                                                data: { confirm: "Are you sure?"} %></small>
+      <% end %>
     </footer>
   </section>
 </div>
