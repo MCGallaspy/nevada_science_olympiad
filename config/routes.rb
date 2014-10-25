@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   end
 
   resources :forms
+  
+  resources :results do
+    member { post :mercury_update }
+    member { patch :upload_results_file }
+    member { delete :delete_results_file }
+  end
 
   mount Mercury::Engine => '/'
 

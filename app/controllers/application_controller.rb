@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
                    {:name => "Events", :path => events_path},
                    {:name => "Code of Ethics", :path => coe_path},
                    {:name => "Announcements", :path => announcements_path},
-                   {:name => "Forms", :path => forms_path}]
+                   {:name => "Forms", :path => forms_path},
+                   {:name => "Results", :path => results_path}]
     end
     
     def logged_in_user
