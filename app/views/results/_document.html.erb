@@ -1,0 +1,6 @@
+<%= download_link @RESULT %>
+<% if logged_in? %>
+  <p>
+    <small><%=link_to "Delete file", delete_results_file_result_path(@RESULT), method: :delete, data: {confirm: "Are you sure?"} %></small>
+  </p>
+<% end %>

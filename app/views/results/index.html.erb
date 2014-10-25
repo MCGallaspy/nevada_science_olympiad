@@ -1,0 +1,18 @@
+<%= provide(:title, "Results") %>
+<%= render 'shared/errors', :model => @RESULT %>
+<div data-mercury="full" id="content">
+<%= raw sanitize @RESULT.content %>
+</div>
+<% if @RESULT.document.exists? %>
+  <ul class="list-group">
+    <li class="list-group-item"><%= render 'results/document' %></li>
+  </ul>
+<% end %>
+<% if logged_in? %>
+  <small><%= link_to "Edit page", "/editor" + request.path, id: "edit_link",
+              data: {save_url: mercury_update_result_path(@RESULT)} %>
+  </small>
+  <div class="well">
+    <%= render 'results/upload_form' %>
+  </div>
+<% end %>
