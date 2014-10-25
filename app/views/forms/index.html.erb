@@ -1,0 +1,6 @@
+<% provide :title, "Forms" %>
+<% @forms.each do |form| %>
+<ul class="list-group">
+  <li class="list-group-item"><%= render 'forms/form', :form => form %></li>
+</ul>
+<% end %>

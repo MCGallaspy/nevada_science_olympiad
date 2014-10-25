@@ -1,5 +1,5 @@
 <div data-mercury="full" id="announcement_content">
-  <%= raw @announcement.content %>
+  <%= raw sanitize @announcement.content %>
 </div>
 <small><%= link_to "Edit announcement", "/editor" + request.path, id: "edit_link",
             data: {save_url: mercury_update_announcement_path(@announcement)} if logged_in? %>

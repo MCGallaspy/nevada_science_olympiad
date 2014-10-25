@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  
   def home
     @static_page = StaticPage.find_by name: "Home"
     render template: "static_pages/static_page"

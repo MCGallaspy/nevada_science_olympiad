@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022233622) do
+ActiveRecord::Schema.define(version: 20141024232610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20141022233622) do
 
   add_index "announcements", ["created_at"], name: "index_announcements_on_created_at", using: :btree
   add_index "announcements", ["user_id"], name: "index_announcements_on_user_id", using: :btree
+
+  create_table "forms", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
 
   create_table "static_pages", force: true do |t|
     t.text     "content"

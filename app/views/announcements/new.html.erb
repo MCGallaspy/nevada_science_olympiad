@@ -1,7 +1,7 @@
 <% provide(:title, "Create new announcement") %>
 
 <%= form_for(@announcement) do |f| %>
-  <%= render 'shared/errors' %>
+  <%= render 'shared/errors', :model => @announcement %>
 
   <%= f.label :content %>
   <%= f.text_area :content, rows: 20, class: 'form-control' %>

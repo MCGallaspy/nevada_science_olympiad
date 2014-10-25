@@ -1,0 +1,7 @@
+<%= download_link form %>
+<% if logged_in? %>
+  <p>
+    <small><%=link_to "Delete", form, method: :delete, data: {confirm: "Are you sure?"} %></small>
+     - <small><%=link_to "Edit", edit_form_path(form) %></small>
+  </p>
+<% end %>

@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
       @navlinks = [{:name => "Home", :path => root_path},
                    {:name => "Events", :path => events_path},
                    {:name => "Code of Ethics", :path => coe_path},
-                   {:name => "Announcements", :path => announcements_path}]
+                   {:name => "Announcements", :path => announcements_path},
+                   {:name => "Forms", :path => forms_path}]
     end
     
     def logged_in_user

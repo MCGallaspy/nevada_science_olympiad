@@ -1,0 +1,10 @@
+<% provide(:title, "Upload new file") %>
+<%= form_for @form, :url => forms_path, :html => { :multipart => true } do |f| %>
+  <%= render 'shared/errors', :model => @form %>
+
+  <%= f.label :document %>
+  <p><strong>Only PDFs and Excel spreadsheets permitted.</strong></p>
+  <%= f.file_field :document, class: "form-control" %>
+
+  <%= f.submit "Upload", class: "btn btn-primary" %>
+<% end %>

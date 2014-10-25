@@ -1,6 +1,6 @@
 <%= provide(:title, @static_page.name) %>
 <div data-mercury="full" id="static_page_content">
-<%= raw @static_page.content %>
+<%= raw sanitize @static_page.content %>
 </div>
 <small><%= link_to "Edit page", "/editor" + request.path, id: "edit_link",
             data: {save_url: mercury_update_static_page_path(@static_page)} if logged_in? %>

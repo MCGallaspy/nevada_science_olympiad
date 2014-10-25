@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module NevadaScienceOlympiad
   class Application < Rails::Application
+    # Add some allowed tags to the HTML sanitizer so Mercury works okay
+    config.action_view.sanitized_allowed_tags = ['font']
+    config.action_view.sanitized_allowed_attributes = ['id', 'class', 'style', 'color']
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

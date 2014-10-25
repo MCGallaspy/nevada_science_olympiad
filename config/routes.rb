@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     member { post :mercury_update }
   end
 
+  resources :forms
+
   mount Mercury::Engine => '/'
 
   # The priority is based upon order of creation: first created -> highest priority.
