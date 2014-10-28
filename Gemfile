@@ -13,6 +13,7 @@ gem 'pg',               '0.17.1'
 gem 'bcrypt',           '~> 3.1.5'
 gem 'bootstrap-sass',   '3.2.0.2'
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: '1cc637b0bccea19085f824d2881c6513ed5ee8ae'
+gem 'passenger'
 
 group :development do
   gem 'spring'

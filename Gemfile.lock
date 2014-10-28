@@ -52,6 +52,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    daemon_controller (1.2.0)
     erubis (2.7.0)
     execjs (2.2.2)
     hike (1.2.3)
@@ -74,6 +75,10 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    passenger (4.0.53)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.17.1)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -146,6 +151,7 @@ DEPENDENCIES
   jquery-rails
   mercury-rails!
   paperclip (~> 4.2)
+  passenger
   pg (= 0.17.1)
   rails (= 4.1.6)
   rails_12factor (= 0.0.2)
